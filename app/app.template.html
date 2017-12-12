@@ -1,0 +1,20 @@
+ <!-- Navbar -->
+<ng-nav></ng-nav>
+<ng2-toasty [position]="'top-center'"></ng2-toasty>
+<!-- Router Outlet - '/' = HomeComp -->
+<div style="padding: 5px;">
+    <nav md-tab-nav-bar >
+        <a md-tab-link
+           *ngFor="let routeLink of routeLinks; let i = index;"
+           [routerLink]="routeLink.link"
+           routerLinkActive="mat-tab-link-active"
+           #rla="routerLinkActive"
+           (click)="activeLinkIndex = i"
+           [routerLinkActiveOptions]="{exact: true}"
+        >
+            {{routeLink.label}}
+        </a>
+    </nav>
+    
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="col-md-12">
+    <h1>{{ pageTitle }}</h1>
+      <table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Description</th>
+        <th class="text-center">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.description }}</td>
+        <td>{{ user.price | currency:'USD':true:'1.0-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br />
+  <br />
+
+  </div>
+</div>
